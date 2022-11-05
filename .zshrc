@@ -110,6 +110,13 @@ source ~/.zplug/init.zsh
 zplug "dracula/zsh", as:theme
 zplug load
 
-TERM=xterm-256color
-export EDITOR='vim'
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.cargo/bin
+export EDITOR='nvim'
+alias w3m="w3m -v "
+
 source /etc/zsh_command_not_found
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
