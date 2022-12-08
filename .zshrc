@@ -73,6 +73,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
     git
     vi-mode
+    fzf-tab # Must be before zsh-autosuggestions
     zsh-autosuggestions
 )
 
