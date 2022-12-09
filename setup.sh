@@ -32,6 +32,6 @@ ln -sf "$HOME/dotfiles/.zshrc" "$HOME/.zshrc"
 ln -sf "$HOME/dotfiles/.tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$HOME/dotfiles/tmuxinator.yml" "$HOME/.config/tmuxinator/tmuxinator.yml"
 
-# Locality
+# Localisation
 sudo localectl set-locale LC_TIME=en_US.utf-8
 sudo timedatectl set-timezone Asia/Seoul
