@@ -2,8 +2,14 @@
 
 #<Install packages>
 sudo apt install git -y
+sudo apt install curl -y
+sudo apt install command-not-found -y
 
-sudo apt install nodejs -y #For CoC
+#curl -fsSL https://tailscale.com/install.sh | sh
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+nvm install node
+
 sudo apt install neovim -y
 sudo apt install bat -y
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
