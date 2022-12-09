@@ -11,6 +11,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
 nvm install node
 
 sudo apt install neovim -y
+sudo apt install ripgrep -y
 sudo apt install bat -y
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -25,7 +26,8 @@ sudo apt install tmux -y
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sudo apt install tmuxinator -y
 
-sudo apt install fzf -y
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --key-bindings
 #</Install packages>
 
 # Config files

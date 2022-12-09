@@ -126,3 +126,5 @@ export NVM_DIR="$HOME/.nvm"
 # fnm
 #export PATH=/home/marcorentap/.fnm:$PATH
 #eval "`fnm env`"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

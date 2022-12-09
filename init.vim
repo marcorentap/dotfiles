@@ -25,6 +25,10 @@ set guicursor=
 let g:dracula_colorterm = 0
 let NERDTreeShowHidden = 1
 
+" PuTTY does not support fancy arrows, these are safer
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"
+
 " <FZF.vim configuration>
 nnoremap <C-P> :Files<CR>
 nnoremap <C-X> :Rg<CR>
