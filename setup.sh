@@ -5,8 +5,6 @@ sudo apt install git -y
 sudo apt install curl -y
 sudo apt install command-not-found -y
 
-#curl -fsSL https://tailscale.com/install.sh | sh
-
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
 
 export NVM_DIR="$HOME/.nvm"
@@ -33,6 +31,10 @@ sudo apt install tmuxinator -y
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --key-bindings
 
+
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
+sudo apt update
 curl -fsSL https://tailscale.com/install.sh | sh
 #</Install packages>
 
