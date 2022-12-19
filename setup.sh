@@ -32,6 +32,8 @@ sudo apt install tmuxinator -y
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --key-bindings
+
+curl -fsSL https://tailscale.com/install.sh | sh
 #</Install packages>
 
 # Config files
