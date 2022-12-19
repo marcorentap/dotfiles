@@ -115,7 +115,8 @@ export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/.cargo/bin
 export EDITOR='nvim'
 alias w3m="w3m -v "
-export FZF_DEFAULT_COMMAND="find -L"
+export FZF_DEFAULT_COMMAND="rg -. --files"
+export FZF_CTRL_T_COMMAND="rg -. --files"
 
 source /etc/zsh_command_not_found
 
