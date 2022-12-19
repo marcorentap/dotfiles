@@ -105,16 +105,18 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export prompt=%\(\?:%\{$'\033'\[01\;32m%\}\>\:%\{$'\033'\[01\;31m%\}\>\)\ %\{\$fg\[cyan\]%\}%c%\{\$reset_color%\}\ \$\(git_prompt_info\)
+
 ### START CUSTOM ###
 # Load zplug plugins
 source ~/.zplug/init.zsh
 zplug "dracula/zsh", as:theme
 zplug load
 
+alias w3m="w3m -v "
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/.cargo/bin
 export EDITOR='nvim'
-alias w3m="w3m -v "
 export FZF_DEFAULT_COMMAND="rg -. --files"
 export FZF_CTRL_T_COMMAND="rg -. --files"
 
