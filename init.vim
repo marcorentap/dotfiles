@@ -24,6 +24,7 @@ set guicursor=
 
 let g:dracula_colorterm = 0
 let NERDTreeShowHidden = 1
+let g:nvim_system_wide = 1
 
 " PuTTY does not support fancy arrows, these are safer
 let g:NERDTreeDirArrowExpandable="+"

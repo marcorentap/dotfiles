@@ -17,6 +17,8 @@ sudo apt install ripgrep -y
 sudo apt install bat -y
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+sudo mkdir /etc/xdg/nvim
+sudo ln -sf "$HOME/dotfiles/init.vim" "/etc/xdg/nvim/sysinit.vim"
 
 sudo apt install zsh -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
