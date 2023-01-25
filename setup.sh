@@ -1,55 +1,46 @@
 #!/bin/bash
+# Setup everything with prompts
+set -e
 
-#<Install packages>
-sudo apt install git -y
-sudo apt install curl -y
-sudo apt install command-not-found -y
+SCRIPTDIR="$(dirname -- $0)"
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+main() {
+    setup_dependencies
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm install node
+    read -p "Do you want to setup localisation? [y/n] " -n 1 -r
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        bash "$SCRIPTDIR/setup_localisation.sh"
+    fi
 
-sudo apt install neovim -y
-sudo apt install ripgrep -y
-sudo apt install bat -y
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-sudo mkdir /etc/xdg/nvim
-sudo ln -sf "$HOME/dotfiles/init.vim" "/etc/xdg/nvim/sysinit.vim"
+    read -p "Do you want to setup neovim? [y/n] " -n 1 -r
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        bash "$SCRIPTDIR/setup_neovim.sh"
+    fi
 
-sudo apt install zsh -y
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    read -p "Do you want to setup tailscale? [y/n] " -n 1 -r
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        bash "$SCRIPTDIR/setup_tailscale.sh"
+    fi
 
-sudo apt install tmux -y
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-sudo apt install tmuxinator -y
+    read -p "Do you want to setup tmux? [y/n] " -n 1 -r
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        bash "$SCRIPTDIR/setup_tmux.sh"
+    fi
 
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install --key-bindings
+    read -p "Do you want to setup hacking tools? [y/n] " -n 1 -r
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        bash "$SCRIPTDIR/setup_hacking_tools.sh"
+    fi
 
+    read -p "Do you want to setup zsh? [y/n] " -n 1 -r
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        bash "$SCRIPTDIR/setup_zsh.sh"
+    fi
+}
 
-curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
-curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
-sudo apt update
-curl -fsSL https://tailscale.com/install.sh | sh
-#</Install packages>
+setup_dependencies() {
+    sudo apt install git -y
+    sudo apt install curl -y
+}
 
-# Config files
-mkdir -p ~/.config/nvim
-mkdir -p ~/.config/tmuxinator
-
-ln -sf "$HOME/dotfiles/init.vim" "$HOME/.config/nvim/init.vim"
-ln -sf "$HOME/dotfiles/.vimrc" "$HOME/.vimrc"
-ln -sf "$HOME/dotfiles/.zshrc" "$HOME/.zshrc"
-ln -sf "$HOME/dotfiles/.tmux.conf" "$HOME/.tmux.conf"
-ln -sf "$HOME/dotfiles/tmuxinator.yml" "$HOME/.config/tmuxinator/tmuxinator.yml"
-
-# Localisation
-sudo localectl set-locale LC_TIME=en_US.utf-8
-sudo timedatectl set-timezone Asia/Seoul
+main "$@"

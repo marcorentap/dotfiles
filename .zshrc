@@ -116,6 +116,7 @@ zplug load
 alias w3m="w3m -v "
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/.cargo/bin
+export PATH=$PATH:/usr/lib/jvm/jdk-19/bin
 export EDITOR='nvim'
 export FZF_DEFAULT_COMMAND="rg --hidden --files"
 export FZF_CTRL_T_COMMAND="rg --hidden --files"
