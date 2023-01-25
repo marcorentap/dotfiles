@@ -8,6 +8,7 @@ main() {
     setup_tmux
 
     read -p "Do you want to setup tmuxinator? [Y/n] " -n 1 -r
+    echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         setup_tmuxinator
     fi

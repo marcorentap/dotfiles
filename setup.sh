@@ -8,31 +8,37 @@ main() {
     setup_dependencies
 
     read -p "Do you want to setup localisation? [y/n] " -n 1 -r
+    echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         bash "$SCRIPTDIR/setup_localisation.sh"
     fi
 
     read -p "Do you want to setup neovim? [y/n] " -n 1 -r
+    echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         bash "$SCRIPTDIR/setup_neovim.sh"
     fi
 
     read -p "Do you want to setup tailscale? [y/n] " -n 1 -r
+    echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         bash "$SCRIPTDIR/setup_tailscale.sh"
     fi
 
     read -p "Do you want to setup tmux? [y/n] " -n 1 -r
+    echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         bash "$SCRIPTDIR/setup_tmux.sh"
     fi
 
     read -p "Do you want to setup hacking tools? [y/n] " -n 1 -r
+    echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         bash "$SCRIPTDIR/setup_hacking_tools.sh"
     fi
 
     read -p "Do you want to setup zsh? [y/n] " -n 1 -r
+    echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         bash "$SCRIPTDIR/setup_zsh.sh"
     fi

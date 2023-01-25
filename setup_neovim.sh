@@ -31,6 +31,7 @@ setup_neovim() {
     sudo apt install neovim -y
 
     read -p "Do you want to customize neovim globally? [y/N] " -n 1 -r
+    echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
         sudo mkdir -p /etc/xdg/nvim
         sudo ln -sf "$HOME/dotfiles/init.vim" "/etc/xdg/nvim/sysinit.vim"
