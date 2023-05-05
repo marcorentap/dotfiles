@@ -17,13 +17,15 @@ main() {
 }
 
 setup_kr() {
-    sudo localectl set-locale LC_TIME=en_US.utf-8
-    sudo timedatectl set-timezone Asia/Seoul
+    sudo locale-gen en_US.UTF-8
+    sudo update-locale LC_TIME=en_US.UTF-8
+    sudo ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 }
 
 setup_my() {
-    sudo localectl set-locale LC_TIME=en_US.utf-8
-    sudo timedatectl set-timezone Asia/Kuala_Lumpur
+    sudo locale-gen en_US.UTF-8
+    sudo update-locale LC_TIME=en_US.UTF-8
+    sudo ln -sf /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 }
 
 main "$@"
