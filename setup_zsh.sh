@@ -1,6 +1,6 @@
 #!/bin/bash
 # Sets up zsh and ohmyzsh
-set -e
+#set -e
 
 SCRIPTDIR="$(dirname -- $0)"
 
@@ -20,13 +20,14 @@ setup_zsh() {
     sudo apt install zsh -y
     sudo apt install command-not-found -y
 
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    sudo locale-gen en_US.UTF-8
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
     curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
     git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    ~/.fzf/install --key-bindings
+    yes | ~/.fzf/install --key-bindings
 }
 
 # Setup zsh links
