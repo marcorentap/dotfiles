@@ -1,4 +1,3 @@
-My dotfiles*. Designed for working through SSH so no fancy themes or fonts, no terminal setup.
+My setup scripts designed for working through SSH so no fancy themes or fonts, no terminal setup.
 
-
-*there's more than dotfiles now
+Note 20230505: There are problems with radare2 builds
