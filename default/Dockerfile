@@ -1,6 +1,7 @@
 FROM ubuntu
 MAINTAINER marcorentap@gmail.com
 ENV LANG=en_US.UTF-8
+ENV TERM xterm-256color
 
 RUN yes | unminimize
 RUN apt-get -y update
