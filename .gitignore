@@ -1,0 +1,11 @@
+# For compatibility with previous dotfile structure,
+# files in ./shared may be copied to ./
+# Ignore these
+/.radare2rc
+/.tmux.conf
+/.vimrc
+/.zshrc
+/init.vim
+/r2panels/debug
+/r2panels/main
+/tmuxinator.yml
