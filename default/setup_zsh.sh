@@ -3,6 +3,7 @@
 #set -e
 
 SCRIPTDIR="$(dirname -- $0)"
+SHAREDDIR="$SCRIPTDIR/../shared"
 
 main() {
     setup_dependencies
@@ -32,7 +33,7 @@ setup_zsh() {
 
 # Setup zsh links
 make_links() {
-    ln -sf "$(realpath $SCRIPTDIR/.zshrc)" "$HOME/.zshrc"
+    ln -sf "$(realpath $SHAREDDIR/.zshrc)" "$HOME/.zshrc"
 }
 
 main "$@"

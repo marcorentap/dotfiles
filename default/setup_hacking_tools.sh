@@ -3,6 +3,7 @@
 set -e
 
 SCRIPTDIR="$(dirname -- $0)"
+SHAREDDIR="$SCRIPTDIR/../shared"
 
 main() {
     setup_radare2
@@ -15,15 +16,15 @@ setup_radare2() {
     git clone https://github.com/radareorg/radare2
     radare2/sys/install.sh
     
-    ln -sf "$(realpath $SCRIPTDIR/.radare2rc)" "$HOME/.radare2rc"
+    ln -sf "$(realpath $SHAREDDIR/.radare2rc)" "$HOME/.radare2rc"
 
     mkdir -p "$HOME/.local/share/radare2/r2panels/"
-    ln -sf "$(realpath $SCRIPTDIR/r2panels/main)" "$HOME/.local/share/radare2/r2panels/main"
-    ln -sf "$(realpath $SCRIPTDIR/r2panels/debug)" "$HOME/.local/share/radare2/r2panels/debug"
+    ln -sf "$(realpath $SHAREDDIR/r2panels/main)" "$HOME/.local/share/radare2/r2panels/main"
+    ln -sf "$(realpath $SHAREDDIR/r2panels/debug)" "$HOME/.local/share/radare2/r2panels/debug"
 }
 
 setup_radare2_ghidra() {
-    r2pm update
+    r2pm -U
     r2pm -ci r2ghidra
 }
 

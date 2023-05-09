@@ -3,6 +3,7 @@
 set -e
 
 SCRIPTDIR="$(dirname -- $0)"
+SHAREDDIR="$SCRIPTDIR/../shared"
 
 main() {
     setup_dependencies
@@ -41,8 +42,8 @@ setup_neovim() {
 # Setup NeoVim plugins
 make_links() {
     mkdir -p ~/.config/nvim
-    ln -sf "$(realpath $SCRIPTDIR/init.vim)" "$HOME/.config/nvim/init.vim"
-    ln -sf "$(realpath $SCRIPTDIR/.vimrc)" "$HOME/.vimrc" # Vim is setup with vimscript only
+    ln -sf "$(realpath $SHAREDDIR/init.vim)" "$HOME/.config/nvim/init.vim"
+    ln -sf "$(realpath $SHAREDDIR/.vimrc)" "$HOME/.vimrc" # Vim is setup with vimscript only
 }
 
 # Install NeoVim plugins

@@ -17,7 +17,4 @@ RUN echo "user:password" | chpasswd
 
 WORKDIR /home/user/dotfiles
 COPY . .
-COPY r2panels r2panels
 RUN chown -R user /home/user/dotfiles
-
-CMD ["cat","openssh_setup.sh"]

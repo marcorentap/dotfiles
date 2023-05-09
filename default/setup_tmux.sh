@@ -3,6 +3,7 @@
 set -e
 
 SCRIPTDIR="$(dirname -- $0)"
+SHAREDDIR="$SCRIPTDIR/../shared"
 
 main() {
     setup_tmux
@@ -18,7 +19,7 @@ main() {
 setup_tmux() {
     sudo apt install tmux -y
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    ln -sf "$(realpath $SCRIPTDIR/.tmux.conf)" "$HOME/.tmux.conf"
+    ln -sf "$(realpath $SHAREDDIR/.tmux.conf)" "$HOME/.tmux.conf"
 
     # Setup links
     tmux start-server
@@ -32,7 +33,7 @@ setup_tmux() {
 setup_tmuxinator() {
     sudo apt install tmuxinator -y
     mkdir -p ~/.config/tmuxinator
-    ln -sf "$(realpath $SCRIPTDIR/tmuxinator.yml)" "$HOME/.config/tmuxinator/tmuxinator.yml"
+    ln -sf "$(realpath $SHAREDDIR/tmuxinator.yml)" "$HOME/.config/tmuxinator/tmuxinator.yml"
 }
 
 main "$@"
