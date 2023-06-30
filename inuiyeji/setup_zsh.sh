@@ -24,6 +24,7 @@ setup_zsh() {
 # Setup zsh links
 make_links() {
     ln -sf "$(realpath $SHAREDDIR/.zshrc)" "$HOME/.zshrc"
+    ln -sf "$(realpath $SHAREDDIR/marcorentap.zsh-theme)" "$HOME/.oh-my-zsh/themes/marcorentap.zsh-theme"
     sed -i "s/source \/etc\/zsh_command_not_found//" "$HOME/.zshrc"
     sed -i "s/export EDITOR='nvim'//" "$HOME/.zshrc"
 }
