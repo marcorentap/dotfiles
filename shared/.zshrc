@@ -111,14 +111,10 @@ source ~/.zplug/init.zsh
 zplug "dracula/zsh", as:theme
 zplug load
 
-alias w3m="w3m -v "
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:~/.cargo/bin
-export PATH=$PATH:/usr/lib/jvm/jdk-19/bin
-export PATH=$PATH:/opt/riscv/bin
-export PATH=$PATH:/opt/riscv/riscv32-unknown-linux-gnu/bin
 export RISCV=/opt/riscv
-export EDITOR='nvim'
+export EDITOR='hx'
 export FZF_DEFAULT_COMMAND="rg --hidden --files"
 export FZF_CTRL_T_COMMAND="rg --hidden --files"
 
