@@ -1,7 +1,6 @@
 [[language]]
 name = "rust"
 indent = { tab-width = 4, unit = "    " }
-config = { checkOnSave = { allTargets = false } }
 
 [[language]]
 name = "nasm"
