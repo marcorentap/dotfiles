@@ -111,12 +111,17 @@ source ~/.zplug/init.zsh
 zplug "dracula/zsh", as:theme
 zplug load
 
-export PATH=$PATH:~/.local/bin
-export PATH=$PATH:~/.cargo/bin
+export PATH=~/.local/bin:$PATH
+export PATH=~/.cargo/bin:$PATH
+export PATH=~/.local/kitty.app:$PATH
+export PATH=/usr/lib/ccache:$PATH
 export RISCV=/opt/riscv
 export EDITOR='hx'
 export FZF_DEFAULT_COMMAND="rg --hidden --files"
 export FZF_CTRL_T_COMMAND="rg --hidden --files"
+
+# alias ssh='kitten ssh'
+alias cb='snap run clipboard'
 
 source /etc/zsh_command_not_found
 
