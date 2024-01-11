@@ -119,6 +119,7 @@ export RISCV=/opt/riscv
 export EDITOR='hx'
 export FZF_DEFAULT_COMMAND="rg --hidden --files"
 export FZF_CTRL_T_COMMAND="rg --hidden --files"
+export CCACHE_BASEDIR=$HOME
 
 # alias ssh='kitten ssh'
 alias cb='snap run clipboard'
