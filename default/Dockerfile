@@ -11,6 +11,7 @@ RUN apt-get -y install tzdata
 RUN apt-get -y install curl
 RUN apt-get -y install git
 RUN apt-get -y install build-essential
+RUN apt-get -y install software-properties-common
 
 RUN useradd -m user
 RUN usermod -aG sudo user
