@@ -18,7 +18,7 @@ setup_dependencies() {
 
 # Install Helix
 setup_helix() {
-    sudo apt install helix
+    sudo snap install helix
 }
 
 # Link configs
