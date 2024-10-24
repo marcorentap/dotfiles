@@ -1,5 +1,0 @@
-inherits = "dracula_at_night"
-
-# Remove background, use terminal's
-"ui.background" = { }
-"ui.highlight" = { bg = "#222222"}

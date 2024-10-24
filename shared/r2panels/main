@@ -1,1 +1,0 @@
-{"Title":"Functions","Cmd":"afl","x":0,"y":1,"w":45,"h":17},{"Title":"Function Calls","Cmd":"aflm","x":0,"y":17,"w":45,"h":17},{"Title":"Symbols","Cmd":"isq","x":0,"y":33,"w":45,"h":17},{"Title":"Classes","Cmd":"icq","x":0,"y":49,"w":45,"h":16},{"Title":"Disassembly","Cmd":"pd","x":44,"y":1,"w":136,"h":64},{"Title":"Decompiler","Cmd":"pdc","x":179,"y":1,"w":91,"h":64}
