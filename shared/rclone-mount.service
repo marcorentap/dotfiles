@@ -1,0 +1,13 @@
+# ~/.config/systemd/user/rclone-mount.service
+[Unit]
+Description=Mount Rclone Drives
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/rclone mount onedrive: /home/marcorentap/onedrive --vfs-cache-mode full
+Restart=no
+ExecStop=/bin/fusermount -u /home/marcorentap/onedrive
+
+[Install]
+WantedBy=default.target
+
